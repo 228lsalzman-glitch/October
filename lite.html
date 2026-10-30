@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get Pranked</title>
+        <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+</style>
+    </head>
+    <body>
+
+<video autoplay playsinline>
+        <source src="video/videoplayback.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        const video = document.querySelector("video");
+
+        video.controls = false;
+        video.addEventListener("pause", () => {
+            video.play();
+        });
+
+        video.addEventListener("contextmenu", event => {
+            event.preventDefault();
+        });
+        const video = document.getElementById("myVideo");
+
+    video.addEventListener("ended", function() {
+        video.pause();
+    });
+    </script>
+
+    </body>
+</html>
